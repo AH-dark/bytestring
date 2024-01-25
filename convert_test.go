@@ -1,4 +1,4 @@
-package bytestring
+package bs
 
 import (
 	cryptoRand "crypto/rand"
@@ -31,7 +31,7 @@ func TestBytesToString(t *testing.T) {
 		_, err := cryptoRand.Read(data)
 		asserts.NoError(err)
 
-		asserts.Equal(rawBytesToStr(data), BytesToString(data))
+		asserts.Equal(rawBytesToStr(data), B2S(data))
 	}
 }
 
@@ -68,7 +68,7 @@ func TestStringToBytes(t *testing.T) {
 
 	for i := 0; i < 100; i++ {
 		s := RandStringBytesMaskImprSrcSB(64)
-		asserts.Equal(rawStrToBytes(s), StringToBytes(s))
+		asserts.Equal(rawStrToBytes(s), S2B(s))
 	}
 }
 
@@ -82,7 +82,7 @@ func BenchmarkBytesConvBytesToStrRaw(b *testing.B) {
 
 func BenchmarkBytesConvBytesToStr(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		BytesToString(testBytes)
+		B2S(testBytes)
 	}
 }
 
@@ -94,6 +94,6 @@ func BenchmarkBytesConvStrToBytesRaw(b *testing.B) {
 
 func BenchmarkBytesConvStrToBytes(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		StringToBytes(testString)
+		S2B(testString)
 	}
 }

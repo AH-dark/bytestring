@@ -1,4 +1,4 @@
-module github.com/AH-dark/bytestring
+module github.com/AH-dark/bytestring/v2
 
 go 1.21
 

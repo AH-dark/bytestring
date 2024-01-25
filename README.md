@@ -7,7 +7,7 @@ A Go library for converting strings to byte slices and vice versa without memory
 To install the `bytestring` library, use the `go get` command:
 
 ```shell
-go get github.com/AH-dark/bytestring
+go get github.com/AH-dark/bs
 ```
 
 ## Usage
@@ -16,18 +16,18 @@ The `bytestring` library provides functions to efficiently convert strings to by
 
 ### Convert String to Bytes
 ```go
-import "github.com/AH-dark/bytestring"
+import "github.com/AH-dark/bytestring/v2"
 
 s := "Hello, World!"
-b := bytestring.StringToBytes(s)
+b := bs.StringToBytes(s)
 ```
 
 ### Convert Bytes to String
 ```go
-import "github.com/AH-dark/bytestring"
+import "github.com/AH-dark/bytestring/v2"
 
 b := []byte{72, 101, 108, 108, 111, 44, 32, 87, 111, 114, 108, 100, 33}
-s := bytestring.BytesToString(b)
+s := bs.BytesToString(b)
 ```
 
 ## Running Tests
